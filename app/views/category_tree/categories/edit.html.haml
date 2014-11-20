@@ -1,7 +1,4 @@
 %h1 Editing category
 
-= render 'form'
-
-= link_to 'Show', @category
-\|
-= link_to 'Back', categories_path
+= simple_form_for @category, :url => category_path(@category), :html => { :class => 'form' } do |form|
+  = render 'form', :form => form, :cancel_url => @category
