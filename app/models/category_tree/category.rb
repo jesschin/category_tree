@@ -14,5 +14,10 @@ module CategoryTree
       end
     end)
 
+    def breadcrumbs
+      names = ancestors.map(&:name)
+      names << name
+      names.join(' > ')
+    end
   end
 end
