@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :category_tree_category, :class => 'CategoryTree::Category' do
-    code "MyString"
-name "MyString"
+  factory :category, :class => 'CategoryTree::Category' do
+    sequence(:code) { |n| "cat_#{n}" }
+    name Faker::Name.name
   end
 
 end

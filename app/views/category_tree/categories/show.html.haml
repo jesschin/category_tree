@@ -1,6 +1,24 @@
-%p#notice= notice
+%dl
+  %dt Code:
+  %dd
+    = @category.code
+%dl
+  %dt Name:
+  %dd
+    = @category.name
 
+-if @category.parent
+  %dl
+    %dt Parent:
+    %dd
+      = link_to @category.parent.name, @category.parent
+
+- if @category.has_children?
+  %dl
+    %dt Children:
+    %dd
+      = render :partial => 'table', :locals => {:categories => @category.children}
 
 = link_to 'Edit', edit_category_path(@category)
 \|
-= link_to 'Back', categories_path
+= link_to 'Back', @category.parent ? @category.parent : categories_path

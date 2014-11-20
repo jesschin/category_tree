@@ -6,7 +6,7 @@ module CategoryTree
 
     # GET /categories
     def index
-      @categories = Category.all
+      @categories = Category.roots
     end
 
     # GET /categories/1
@@ -56,7 +56,9 @@ module CategoryTree
 
       # Only allow a trusted parameter "white list" through.
       def category_params
-        params[:category]
+        params.require(:category).permit(:code,
+                                         :name,
+                                         :parent_id)
       end
   end
 end

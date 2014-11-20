@@ -1,0 +1,10 @@
+%table
+  %thead
+    %tr
+      %th Code
+      %th Name
+  %tbody
+    - categories.each do |category|
+      %tr
+        %td= link_to category.code, category
+        %td= category.name
