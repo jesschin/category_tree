@@ -25,29 +25,6 @@ ActiveRecord::Schema.define(version: 20141118025748) do
     t.integer  "ancestry_depth", default: 0
   end
 
-  create_table "user_maintenance_users", force: true do |t|
-    t.string   "email",                            default: "",   null: false
-    t.string   "encrypted_password",               default: "",   null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                    default: 0,    null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "roles_mask"
-    t.boolean  "enabled",                          default: true
-    t.integer  "password_last_updated_by_user_id"
-    t.datetime "deleted_at"
-  end
-
-  add_index "user_maintenance_users", ["deleted_at"], name: "index_user_maintenance_users_on_deleted_at", using: :btree
-  add_index "user_maintenance_users", ["email"], name: "index_user_maintenance_users_on_email", unique: true, using: :btree
-  add_index "user_maintenance_users", ["reset_password_token"], name: "index_user_maintenance_users_on_reset_password_token", unique: true, using: :btree
+  add_index "category_tree_categories", ["ancestry"], name: "index_category_tree_categories_on_ancestry", using: :btree
 
 end
