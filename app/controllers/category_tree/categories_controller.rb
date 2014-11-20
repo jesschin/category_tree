@@ -16,6 +16,7 @@ module CategoryTree
     # GET /categories/new
     def new
       @category = Category.new
+      @category.parent_id = params[:parent_id] if params[:parent_id].present?
     end
 
     # GET /categories/1/edit

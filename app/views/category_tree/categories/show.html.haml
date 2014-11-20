@@ -21,4 +21,5 @@
 
 = link_to 'Edit', edit_category_path(@category)
 \|
+= link_to 'New Subcategory', new_category_path(:parent_id => @category.id)
 = link_to 'Back', @category.parent ? @category.parent : categories_path
