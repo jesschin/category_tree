@@ -52,6 +52,4 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include FactoryGirl::Syntax::Methods
-  config.include CategoryTree::Engine.routes.url_helpers, :type => :controller
-  config.include Rails.application.routes.url_helpers, :type => :controller
 end
