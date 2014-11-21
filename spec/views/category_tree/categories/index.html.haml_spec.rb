@@ -1,10 +1,11 @@
 require 'rails_helper'
+include CategoryTree::Engine.routes.url_helpers
 
-RSpec.describe "categories/index", :type => :view do
+RSpec.describe "category_tree/categories/index", :type => :view do
   before(:each) do
     assign(:categories, [
-      Category.create!(),
-      Category.create!()
+      create(:category),
+      create(:category)
     ])
   end
 

@@ -1,8 +1,9 @@
 require 'rails_helper'
+include CategoryTree::Engine.routes.url_helpers
 
-RSpec.describe "categories/edit", :type => :view do
+RSpec.describe "category_tree/categories/edit", :type => :view do
   before(:each) do
-    @category = assign(:category, Category.create!())
+    @category = assign(:category, create(:category))
   end
 
   it "renders the edit category form" do

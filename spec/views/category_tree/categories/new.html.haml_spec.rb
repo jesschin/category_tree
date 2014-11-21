@@ -1,8 +1,9 @@
 require 'rails_helper'
+include CategoryTree::Engine.routes.url_helpers
 
-RSpec.describe "categories/new", :type => :view do
+RSpec.describe "category_tree/categories/new", :type => :view do
   before(:each) do
-    assign(:category, Category.new())
+    assign(:category, create(:category))
   end
 
   it "renders new category form" do
