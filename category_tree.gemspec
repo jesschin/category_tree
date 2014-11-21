@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = CategoryTree::VERSION
   s.authors     = ['Joan Tiffany Siy']
   s.email       = ['joan@teamcodeflux.com']
-  s.homepage    = 'http://www.teamcodeflux.com'
+  s.homepage    = 'https://github.com/jotiffany/category_tree'
   s.summary     = 'Category Tree Engine'
   s.description = "Module for Category CRUD"
   s.license     = "MIT"
