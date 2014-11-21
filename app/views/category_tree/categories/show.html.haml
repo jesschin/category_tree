@@ -11,7 +11,7 @@
   %dl
     %dt Parent:
     %dd
-      = link_to @category.parent.name, @category.parent
+      = link_to @category.parent.name, category_path(@category.parent)
 
 - if @category.has_children?
   %dl
@@ -21,5 +21,5 @@
 
 = link_to 'Edit', edit_category_path(@category)
 \|
-= link_to 'New Subcategory', new_category_path(:parent_id => @category.id)
-= link_to 'Back', @category.parent ? @category.parent : categories_path
+= link_to 'New Subcategory', new_child_path(@category)
+= link_to 'Back', @category.parent ? category_path(@category.parent) : categories_path

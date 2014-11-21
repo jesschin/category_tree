@@ -1,4 +1,4 @@
 %h1 Editing category
 
 = simple_form_for @category, :url => category_path(@category), :html => { :class => 'form' } do |form|
-  = render 'form', :form => form, :cancel_url => @category
+  = render 'form', :form => form, :cancel_url => category_path(@category)

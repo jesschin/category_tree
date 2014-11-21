@@ -1,7 +1,7 @@
-require_dependency "category_tree/application_controller"
+# require_dependency "category_tree/application_controller"
 
 module CategoryTree
-  class CategoriesController < ApplicationController
+  class CategoriesController < CategoryTree::ApplicationController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     # GET /categories
@@ -16,7 +16,7 @@ module CategoryTree
     # GET /categories/new
     def new
       @category = Category.new
-      @category.parent_id = params[:parent_id] if params[:parent_id].present?
+      @category.parent_id = params[:id] if params[:id].present?
     end
 
     # GET /categories/1/edit
