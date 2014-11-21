@@ -7,7 +7,7 @@ require 'jquery-ui-rails'
 require 'jbuilder'
 require 'ancestry'
 
-require "category_tree/engine"
+require 'category_tree/engine'
 
 module CategoryTree
 end

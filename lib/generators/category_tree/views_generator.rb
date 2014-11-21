@@ -1,6 +1,5 @@
 module CategoryTree
   class ViewsGenerator < Rails::Generators::Base
-
     def set_root
       ViewsGenerator.source_root File.expand_path('../../../../app', __FILE__)
     end

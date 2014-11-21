@@ -23,13 +23,13 @@ module CategoryTree
     # This should return the minimal set of attributes required to create a valid
     # Category. As you add validations to Category, be sure to
     # adjust the attributes here as well.
-    let(:valid_attributes) {
+    let(:valid_attributes) do
       attributes_for(:category)
-    }
+    end
 
-    let(:invalid_attributes) {
-      {:code => '', :name => ''}
-    }
+    let(:invalid_attributes) do
+      { :code => '', :name => '' }
+    end
 
     # This should return the minimal set of values that should be in the session
     # in order to pass any filters (e.g. authentication) defined in
@@ -38,122 +38,122 @@ module CategoryTree
 
     routes { CategoryTree::Engine.routes }
 
-    describe "GET index" do
-      it "assigns root categories as @categories" do
+    describe 'GET index' do
+      it 'assigns root categories as @categories' do
         category = create(:category)
         get :index, {}, valid_session
         expect(assigns(:categories)).to eq([category])
       end
     end
 
-    describe "GET show" do
-      it "assigns the requested category as @category" do
+    describe 'GET show' do
+      it 'assigns the requested category as @category' do
         category = create(:category)
-        get :show, {:id => category.to_param}, valid_session
+        get :show, { :id => category.to_param }, valid_session
         expect(assigns(:category)).to eq(category)
       end
     end
 
-    describe "GET new" do
-      it "assigns a new category as @category" do
+    describe 'GET new' do
+      it 'assigns a new category as @category' do
         get :new, {}, valid_session
         expect(assigns(:category)).to be_a_new(Category)
       end
     end
 
-    describe "GET edit" do
-      it "assigns the requested category as @category" do
+    describe 'GET edit' do
+      it 'assigns the requested category as @category' do
         category = create(:category)
-        get :edit, {:id => category.to_param}, valid_session
+        get :edit, { :id => category.to_param }, valid_session
         expect(assigns(:category)).to eq(category)
       end
     end
 
-    describe "POST create" do
-      describe "with valid params" do
-        it "creates a new Category" do
-          expect {
-            post :create, {:category => valid_attributes}, valid_session
-          }.to change(Category, :count).by(1)
+    describe 'POST create' do
+      describe 'with valid params' do
+        it 'creates a new Category' do
+          expect do
+            post :create, { :category => valid_attributes }, valid_session
+          end.to change(Category, :count).by(1)
         end
 
-        it "assigns a newly created category as @category" do
-          post :create, {:category => valid_attributes}, valid_session
+        it 'assigns a newly created category as @category' do
+          post :create, { :category => valid_attributes }, valid_session
           expect(assigns(:category)).to be_a(Category)
           expect(assigns(:category)).to be_persisted
         end
 
-        it "redirects to the created category" do
-          post :create, {:category => valid_attributes}, valid_session
+        it 'redirects to the created category' do
+          post :create, { :category => valid_attributes }, valid_session
           expect(response).to redirect_to(Category.last)
         end
       end
 
-      describe "with invalid params" do
-        it "assigns a newly created but unsaved category as @category" do
-          post :create, {:category => invalid_attributes}, valid_session
+      describe 'with invalid params' do
+        it 'assigns a newly created but unsaved category as @category' do
+          post :create, { :category => invalid_attributes }, valid_session
           expect(assigns(:category)).to be_a_new(Category)
         end
 
         it "re-renders the 'new' template" do
-          post :create, {:category => invalid_attributes}, valid_session
-          expect(response).to render_template("new")
+          post :create, { :category => invalid_attributes }, valid_session
+          expect(response).to render_template('new')
         end
       end
     end
 
-    describe "PUT update" do
-      describe "with valid params" do
-        let(:new_attributes) {
-          {:name => 'New Category'}
-        }
+    describe 'PUT update' do
+      describe 'with valid params' do
+        let(:new_attributes) do
+          { :name => 'New Category' }
+        end
 
-        it "updates the requested category" do
+        it 'updates the requested category' do
           category = create(:category)
-          put :update, {:id => category.to_param, :category => new_attributes}, valid_session
+          put :update, { :id => category.to_param, :category => new_attributes }, valid_session
           category.reload
           expect(category.name).to be_eql(new_attributes[:name])
         end
 
-        it "assigns the requested category as @category" do
+        it 'assigns the requested category as @category' do
           category = create(:category)
-          put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
+          put :update, { :id => category.to_param, :category => valid_attributes }, valid_session
           expect(assigns(:category)).to eq(category)
         end
 
-        it "redirects to the category" do
+        it 'redirects to the category' do
           category = create(:category)
-          put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
+          put :update, { :id => category.to_param, :category => valid_attributes }, valid_session
           expect(response).to redirect_to(category)
         end
       end
 
-      describe "with invalid params" do
-        it "assigns the category as @category" do
+      describe 'with invalid params' do
+        it 'assigns the category as @category' do
           category = create(:category)
-          put :update, {:id => category.to_param, :category => invalid_attributes}, valid_session
+          put :update, { :id => category.to_param, :category => invalid_attributes }, valid_session
           expect(assigns(:category)).to eq(category)
         end
 
         it "re-renders the 'edit' template" do
           category = create(:category)
-          put :update, {:id => category.to_param, :category => invalid_attributes}, valid_session
-          expect(response).to render_template("edit")
+          put :update, { :id => category.to_param, :category => invalid_attributes }, valid_session
+          expect(response).to render_template('edit')
         end
       end
     end
 
-    describe "DELETE destroy" do
-      it "destroys the requested category" do
+    describe 'DELETE destroy' do
+      it 'destroys the requested category' do
         category = create(:category)
-        expect {
-          delete :destroy, {:id => category.to_param}, valid_session
-        }.to change(Category, :count).by(-1)
+        expect do
+          delete :destroy, { :id => category.to_param }, valid_session
+        end.to change(Category, :count).by(-1)
       end
 
-      it "redirects to the categories list" do
+      it 'redirects to the categories list' do
         category = create(:category)
-        delete :destroy, {:id => category.to_param}, valid_session
+        delete :destroy, { :id => category.to_param }, valid_session
         expect(response).to redirect_to(categories_path)
       end
     end
