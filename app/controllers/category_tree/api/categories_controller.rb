@@ -3,7 +3,6 @@ module CategoryTree
     def index
       @categories = Category.order(:name)
       @categories = @categories.search(params[:term]) if params[:term].present?
-      puts @categories
     end
 
     def show
