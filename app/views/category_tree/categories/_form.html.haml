@@ -1,6 +1,6 @@
 = form.input :code
 = form.input :name
-= form.input :parent_name, :as => :independent, :required => :true
+= form.input :parent_name, :as => :independent, :required => :true, :input_html => {:data => {:"autocomplete-source" => api_categories_path}, :value => @category.parent ? @category.parent.name : ''}, :label => 'Parent'
 = form.input :parent_id, :as => :hidden
 
 = form.button :submit
