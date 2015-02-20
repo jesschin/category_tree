@@ -40,9 +40,8 @@ module CategoryTree
 
     describe 'GET index' do
       it 'assigns root categories as @categories' do
-        category = create(:category)
         get :index, {}, valid_session
-        expect(assigns(:categories)).to eq([category])
+        expect(assigns(:categories)).to eq(Category.roots)
       end
     end
 
