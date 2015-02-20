@@ -6,7 +6,7 @@ This is a Rails Engine that provides category management to a Rails Application.
 In your Rails project:
 
 - Add category_tree to the Gemfile:
-    `gem 'category_tree', :path => '/path/to/category_tree'`
+    `gem 'category_tree', :github => 'jesschin/category_tree'`
 - Run `bundle install`
 - Edit config/routes.rb and add this line:
     `mount CategoryTree::Engine => "/"`
