@@ -13,9 +13,9 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-gem 'rspec-rails', '~> 3.1.0'
+gem 'rspec-rails', '~> 3.2.0'
 gem 'factory_girl_rails', '~> 4.5.0'
-gem 'shoulda-matchers', '~> 2.7.0', :require => false
+gem 'shoulda-matchers', '~> 2.8.0', :require => false
 gem 'faker', '~> 1.4.3'
 gem 'populator', '~> 1.0.0'
-gem 'rubocop', '~> 0.27.1'
+gem 'rubocop', '~> 0.29.1'
