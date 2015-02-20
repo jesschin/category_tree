@@ -4,7 +4,7 @@ class CreateCategoryTreeCategories < ActiveRecord::Migration
       t.string :code
       t.string :name
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
