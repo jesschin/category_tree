@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form', '~> 3.1.0'
   s.add_dependency 'ancestry', '~> 2.1.0'
   s.add_dependency 'jbuilder', '~> 2.2.7'
+  s.add_dependency 'carrierwave', '~> 0.10.0'
 end
