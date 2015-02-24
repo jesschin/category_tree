@@ -61,7 +61,8 @@ module CategoryTree
       params.require(:category).permit(:code,
                                        :name,
                                        :parent_id,
-                                       :icon)
+                                       :icon,
+                                       :icon_cache)
     end
   end
 end

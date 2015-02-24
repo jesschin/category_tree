@@ -2,7 +2,9 @@
 = form.input :name
 = form.input :parent_name, :as => :independent, :input_html => {:data => {:"autocomplete-source" => api_categories_path}, :value => @category.parent ? @category.parent.name : ''}, :label => 'Parent'
 = form.input :parent_id, :as => :hidden
+= image_tag @category.icon.url if @category.icon?
 = form.input :icon, :as => :file
+= form.input :icon_cache, :as => :hidden
 
 = form.button :submit
 \|
