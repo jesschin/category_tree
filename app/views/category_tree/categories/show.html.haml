@@ -7,6 +7,11 @@
   %dd
     = @category.name
 
+%dl
+  %dt Icon:
+  %dd
+    = image_tag @category.icon.url
+
 -if @category.parent
   %dl
     %dt Parent:
