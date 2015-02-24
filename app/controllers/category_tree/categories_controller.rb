@@ -60,7 +60,8 @@ module CategoryTree
     def category_params
       params.require(:category).permit(:code,
                                        :name,
-                                       :parent_id)
+                                       :parent_id,
+                                       :icon)
     end
   end
 end
