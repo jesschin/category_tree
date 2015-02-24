@@ -1,6 +1,7 @@
 module CategoryTree
   class Category < ActiveRecord::Base
     has_ancestry :orphan_strategy => :restrict, :cache_depth => true
+    mount_uploader :icon, IconUploader
 
     validates :code, :name, :presence => true
     validates :code, :uniqueness => true
