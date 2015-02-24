@@ -8,9 +8,14 @@
     = @category.name
 
 %dl
-  %dt Icon:
+  %dt Full Icon:
   %dd
-    = image_tag @category.icon.url
+    = image_tag @category.icon.full.url
+
+%dl
+  %dt Small Icon:
+  %dd
+    = image_tag @category.icon.thumb.url
 
 -if @category.parent
   %dl
