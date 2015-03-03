@@ -11,11 +11,6 @@ module CategoryTree
                                                  :action => 'index')
       end
 
-      it 'routes to #new' do
-        expect(:get => 'categories/new').to route_to(:controller => 'category_tree/categories',
-                                                     :action => 'new')
-      end
-
       it 'routes to #show' do
         expect(:get => 'categories/1').to route_to(:controller => 'category_tree/categories',
                                                    :action => 'show', :id => '1')
