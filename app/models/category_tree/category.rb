@@ -3,7 +3,6 @@ module CategoryTree
     has_ancestry :orphan_strategy => :restrict, :cache_depth => true
     mount_uploader :icon, IconUploader
 
-    validates :code, :name, :presence => true, :uniqueness => true
     validates :icon, :presence => true
 
     scope :search, (lambda do |search_keys|
