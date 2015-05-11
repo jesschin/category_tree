@@ -1,5 +1,5 @@
 module CategoryTree
   Engine.routes.draw do
-    resources :categories, :as => :categories, :except => [:new, :create]
+    resources :categories, :as => :categories
   end
 end
